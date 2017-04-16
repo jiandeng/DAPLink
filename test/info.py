@@ -105,7 +105,7 @@ SUPPORTED_CONFIGURATIONS = [
     (   0x218,      'k20dx_frdmkl82z_if',                       'k20dx_bl',         None                                    ), # TODO - set target to 'FRDM-KL82Z' when mbed-os supports this
     (   0x311,      'k20dx_frdmk66f_if',                        'k20dx_bl',         None                                    ), # TODO - set target to 'FRDM-K66F' when mbed-os supports this
     (   0x350,      'k20dx_xdot_l151_if',                       'k20dx_bl',         None                                    ), # TODO - set target to 'MTS-xDot-L151CC' when mbed-os supports this
-    (   0x8080,     'lpc11u35_ff1705_l151_if',                  None,               'L-TEK-FF1705'                          ),  
+    (   0x8080,     'lpc11u35_ff1705_l151_if',                  None,               'L-TEK-FF1705'                          ),
     (   0x824,      'lpc11u35_lpc824xpresso_if',                None,               'LPCXpresso824-MAX'                     ),
     (   0x1017,     'lpc11u35_hrm1017_if',                      None,               'mbed-HRM1017'                          ),
     (   0x1018,     'lpc11u35_ssci824_if',                      None,               'Switch-Science-mbed-LPC824'            ),
@@ -159,6 +159,7 @@ HIC_STRING_TO_ID = {
     'lpc11u35': 0x97969902,
     'sam3u2c': 0x97969903,
     'lpc4322': 0x97969905,
+    'stm32f103xb': 0x97969904,
 }
 
 BOARD_ID_LOCKED_WHEN_ERASED = set([
