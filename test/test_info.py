@@ -36,12 +36,14 @@ class TestInfo(object):
         FAILURE: "Failure: %s",
     }
 
-    def __init__(self, name):
+    def __init__(self, name, init_print=True):
         self._all = []
         self.failures = 0
         self.warnings = 0
         self.infos = 0
         self.name = name
+        if init_print:
+            self._print_msg("SubTest: " + name)
 
     def failure(self, msg):
         assert isinstance(msg, six.string_types)
@@ -158,7 +160,7 @@ class TestInfo(object):
     def _add_entry(self, entry_type, msg):
         if entry_type is self.SUBTEST:
             assert isinstance(msg, TestInfo)
-            self._print_msg("SubTest: " + msg.get_name())
+            # Test name printed in constructor
         else:
             assert isinstance(msg, six.string_types)
             self._print_msg(msg)
@@ -172,7 +174,7 @@ class TestInfo(object):
 class TestInfoStub(TestInfo):
 
     def __init__(self):
-        super(TestInfoStub, self).__init__('stub test')
+        super(TestInfoStub, self).__init__('stub test', False)
 
     def create_subtest(self, name):
         assert isinstance(name, six.string_types)
